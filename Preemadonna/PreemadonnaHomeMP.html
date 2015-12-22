@@ -1,0 +1,158 @@
+<div class="home-layout">
+  {% subpage "join" with "join_hero" %}
+
+  {% assign element = page %}
+
+  <section class="video-section" data-name="Video Slider" data-type="page" data-screenshot="/screenshots/video-slider.png">
+    <ul class="slides">
+      <!--li class="overlay video-overlay"-->
+      <div class="background-image-holder">
+        <img alt="Slide Background" class="background-image" src="http://d3n8a8pro7vhmx.cloudfront.net/themes/55365c5c2213937eeb000001/attachments/original/1447103772/alexa_cafe_banner_4.jpg?1447103772">
+      </div>
+
+
+      <div class="builder-container vertical-align" id="video-buttons">
+        <div class="col-sm-12 text-center">
+          <!--p class="text-white visible-xs">The Nailbot prints nail art directly onto your fingernails... from your phone!</p-->
+          <a class="btn btn-filled" data-toggle="modal" data-target="#videoModal">NAILBOT SPOILER</a>
+          <br><br>
+          <a class="btn btn-filled" href="/go-nailbot">GET THE NAILBOT</a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!--MP attempt at copying ambassadors circle block to HP for nailbot prints. need to make sure they pull from featured content sliders-->
+  <section class="three-cto-circles" data-name="Nailbot Prints" data-theme="spark" data-screenshot="TBD" data-type="list" data-limit="4">
+
+
+    <div class="container">
+      <h3 class="text-center">#Nailbot Prints</h3>
+      
+      <div class="row bumper">
+
+        {% for element in page.features | limit:4 %}
+        <div class="col-sm-3">
+            <div class="circle-image background-image-holder">
+              <img src="{{ element.image_url }}" alt="{{element.name}}">
+            </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+<!--end of MP attempt-->
+
+<!--MP attempt at app block-->
+<section>
+
+    <div class="container">
+      <h3 class="text-center">Download the Preemadonna Augmented Reality App through iTunes</h3>
+      <p class="super-lead text-center">Share your designs before you receive your Nailbot!</p>
+      
+      <div class="row bumper">
+        <img src="#" alt="Premadonna-App-Shots">
+      </div>
+
+      <a class="btn btn-filled" href="#">DOWNLOAD THE APP</a>
+    </div>
+     
+  </section>
+<!--end of MP attempt-->
+
+<section class="media-links-section">
+  <div class="container">
+    {% subpage "media_links" with "media_links" %}
+
+  </div>
+</section>
+
+<!--MP attempt to include ambassadors block, how do i pull in content from NB content editor? MP note to self: need to create this page 1st!-->
+<section data-name="Another Signup Hero" data-type="page" data-theme="spark" data-defaultpage="signup" class="signup-slider">
+    <div class="background-image-holder parallax-background overlay">
+      <img alt="Slide Background" class="background-image" src="{% if page.meta_image_url contains "missing" %}{{theme['darkbackground.png']}}{% else %}{{ page.meta_image_url }}{% endif %}">
+    </div>
+
+    <div class="container">
+      <div class="ambassador-intro">
+        {{ page.basic.content }}
+        <a href="/ambassadors" target="_blank" class="btn btn-primary btn-lg">Find out more!</a>
+      </div>
+    </div>
+  </section>
+<!--end of MP attempt-->
+
+{% subpage "mission" with "home_mission" %}
+
+<section class="meet-the-founders" data-name="Stats Section" data-screenshot="/screenshots/stats-bar.png" data-type="page">
+
+  <div class="builder-container">
+    <div class="row">
+      <div class="col-sm-4 text-center pree descriptions">
+        <h1>Pree</h1>
+        <ul>
+          <li><span class="descriptor">CEO</span></li>
+          <li><span class="descriptor">Inventor</span></li>
+          <li><span class="descriptor">Beautiful</span></li>
+        </ul>
+      </div>
+      <div class="founder-photo">
+        <img src="{{theme['founders.png']}}" alt="">
+      </div>
+
+      <div class="col-sm-4 col-sm-offset-4 text-center descriptions">
+        <h1>Casey</h1>
+        <ul>
+          <li><span class="descriptor">Robotics Engineer</span></li>
+          <li><span class="descriptor">Crafter</span></li>
+          <li><span class="descriptor">Beautiful</span></li>
+        </ul>
+      </div>
+
+      <div class="text-center">
+        <a href="/inventors" class="btn btn-filled">Get to know the founders</a>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+  <!--section class="twitter-slider" data-name="Twitter Slider" data-type="page" data-screenshot="/">
+   <div id="latest-tweet">
+     <span class="icon icon-twitter"></span>
+     <div class="container">
+       <div id="tweets" class="tweets-feed" data-widget-id="587687083235475456">
+
+
+
+       </div>
+     </div>
+   </div>
+ </section-->
+
+ <div class="modal fade" id="videoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="videoWrapper">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/{{demo_video_id}}?rel=0&amp;enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-default popup" href="http://twitter.com/home?status=Preemadonna's Nailbot prints art directly onto your fingernails with your smartphone. Custom, instant, DIY nail art!:%20http://youtu.be/{{demo_video_id}}" target="_blank">Tweet</a>
+
+        <a class="btn btn-default popup" href="https://www.facebook.com/sharer/sharer.php?u=http://youtu.be/{{demo_video_id}}" target="_blank">Post</a>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>

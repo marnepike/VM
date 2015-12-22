@@ -1,0 +1,76 @@
+<div class="ambassadors">
+
+  <section data-name="Another Signup Hero" data-type="page" data-theme="spark" data-defaultpage="signup" class="signup-slider">
+    <div class="background-image-holder parallax-background overlay">
+      <img alt="Slide Background" class="background-image" src="{% if page.meta_image_url contains "missing" %}{{theme['darkbackground.png']}}{% else %}{{ page.meta_image_url }}{% endif %}">
+    </div>
+
+    <div class="container">
+      <div class="ambassador-intro">
+        {{ page.basic.content }}
+        <a href="/community_partner_faq" target="_blank" class="btn btn-primary btn-lg">Sign up!</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="three-cto-circles" data-name="Circle Calls to Action" data-theme="spark" data-screenshot="TBD" data-type="list" data-limit="3">
+
+
+    <div class="container">
+      <p class="super-lead text-center">Text re community partners! Text re community partners! Text re community partners!</p>
+     
+      <div class="row bumper">
+
+        {% for element in page.features | limit:3 %}
+        <div class="col-sm-4">
+          <a>
+            <div class="circle-image background-image-holder">
+              <img src="{{ element.image_url }}" alt="{{element.name}}">
+            </div>
+            <h3 class="text-center">{{element.name}}</h3>
+            <p class="lead text-center">{{element.headline}}</p>
+          </a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <section class="enquire-strip" data-name="Email Signup Bar" data-type="site"  data-screenshot="/screenshots/callout-bar.png">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h3>What are the awesome perks of being a<span class="color-brand"> Preemadonna Community Partner?</span></h3>
+        </div>
+        <div class="col-sm-3">
+        <!--note to self, need to create FAQ page-->
+          <a href="/community_partner_faq" target="_blank" class="btn-block btn-primary btn">FAQ</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  {% subpage "ambassador_testimonials" with "ambassador_testimonials_layout" %}
+
+  {% subpage "communitypartners_blurb" with "communitypartners_blurb_layout" %}
+
+  <section class="enquire-strip skinny" data-name="Email Signup Bar" data-type="site"  data-screenshot="/screenshots/callout-bar.png">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h3><span class="color-brand">What are you waiting for?</span> Become a community partner!</h3>
+        </div>
+        <div class="col-sm-3">
+          <a href="/community_partner_faq" target="_blank" class="btn-block btn-primary btn">Sign up!</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
